@@ -14,6 +14,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var blueSlider: UISlider!
     @IBOutlet weak var colorView: UIView!
     
+    @IBOutlet var hueSlider: UISlider!
+    @IBOutlet var saturationSlider: UISlider!
+    @IBOutlet var brightnessSlider: UISlider!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -29,9 +33,17 @@ class ViewController: UIViewController {
         var g = CGFloat(greenSlider.value)
         var b = CGFloat(blueSlider.value)
         println(r)
-    colorView.backgroundColor = UIColor(red: r, green: g, blue: b, alpha: 1.0)
+        colorView.backgroundColor = UIColor(red: r, green: g, blue: b, alpha: 1.0)
     }
-
+   @IBAction func hsbColor(){
+        var h = CGFloat(hueSlider.value)
+        var s = CGFloat(saturationSlider.value)
+        var b = CGFloat(brightnessSlider.value)
+        println(h)
+        colorView.backgroundColor = UIColor(hue: h, saturation: s, brightness: b, alpha: 1.0)
+    }
+//TODO: build in second view screen or rework UI to show
+    //color palette options
 
 }
 
